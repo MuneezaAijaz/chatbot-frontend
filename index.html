@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="ChatFlow - a frontend-only real-time chat interface">
+  <title>ChatFlow</title>
+  <link rel="icon" href="./logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" aria-label="ChatFlow chat application">
+    <header class="app__header">
+      <div class="brand">
+        <img class="brand__logo" src="./logo.svg" alt="" width="42" height="42">
+        <div>
+          <h1 class="brand__name">ChatFlow</h1>
+          <p class="brand__status"><span class="dot" aria-hidden="true"></span><span id="statusText">Online</span></p>
+        </div>
+      </div>
+      <button type="button" id="clearBtn" class="btn btn--ghost" aria-label="Clear chat history">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 10v6M14 10v6"/></svg>
+        <span>Clear Chat</span>
+      </button>
+    </header>
+
+    <section id="chatBox" class="chat" role="log" aria-live="polite" aria-label="Chat messages" tabindex="0">
+      <div id="emptyState" class="empty" hidden>
+        <div class="empty__icon" aria-hidden="true">💬</div>
+        <h2>No messages yet</h2>
+        <p>Say hello to start the conversation. Try “help” to see what I can do.</p>
+      </div>
+    </section>
+
+    <form id="chatForm" class="composer" autocomplete="off">
+      <label for="messageInput" class="sr-only">Message</label>
+      <input id="messageInput" type="text" placeholder="Type your message..." maxlength="500">
+      <button type="submit" class="btn btn--send" aria-label="Send message">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+      </button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
